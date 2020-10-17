@@ -1,6 +1,7 @@
 package model;
 
 import view.View;
+
 import java.util.*;
 
 public class Model {

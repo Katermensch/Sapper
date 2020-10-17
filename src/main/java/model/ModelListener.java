@@ -1,5 +1,4 @@
-package main.java.model;
-
+package model;
 
 public interface ModelListener {
     void setGameTime(String seconds);

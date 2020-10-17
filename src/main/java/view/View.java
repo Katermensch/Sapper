@@ -1,10 +1,10 @@
-package main.java.view;
+package view;
 
-import main.java.controller.Controller;
-import main.java.controller.ControllerListener;
-import main.java.model.Difficult;
-import main.java.model.ModelListener;
-import main.java.model.SapperCell;
+import controller.Controller;
+import controller.ControllerListener;
+import model.Difficult;
+import model.ModelListener;
+import model.SapperCell;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,7 +40,7 @@ public class View implements ModelListener{
         this.controller = controller;
         cellIcons();
         frame = new JFrame("Sapper");
-    
+
     }
 
     @Override

@@ -1,8 +1,6 @@
-package main.java;
-
-import main.java.controller.Controller;
-import main.java.model.Model;
-import main.java.view.View;
+import controller.Controller;
+import model.Model;
+import view.View;
 
 public class Sapper {
     public static void main(String[] args){

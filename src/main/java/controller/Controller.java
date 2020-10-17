@@ -1,7 +1,7 @@
-package main.java.controller;
+package controller;
 
-import main.java.model.Difficult;
-import main.java.model.Model;
+import model.Difficult;
+import model.Model;
 
 import static java.lang.Thread.sleep;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
@@ -18,6 +18,7 @@ public class Controller{
 
 
     public Controller(Model model){this.model = model;}
+
 
     public void run() {
         model.run(difficult);
@@ -50,7 +51,7 @@ public class Controller{
         model.runCustomGame(line, column, mine);
     }
 
-    private void startTimer() {
+    public void startTimer() {
         this.startTime = System.nanoTime();
         this.isStart = true;
         timer = new Thread(() -> {
@@ -75,7 +76,7 @@ public class Controller{
         }
     }
 
-    private long getTime() {
+    public long getTime() {
         long time;
         if (isStart) {
             time = (System.nanoTime() - startTime);
@@ -84,5 +85,7 @@ public class Controller{
         }
         return NANOSECONDS.toSeconds(time);
     }
+
+
 
 }
