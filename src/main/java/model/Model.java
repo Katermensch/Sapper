@@ -1,6 +1,6 @@
-package main.java.model;
+package model;
 
-
+import view.View;
 import java.util.*;
 
 public class Model {
@@ -17,8 +17,8 @@ public class Model {
     private ModelListener listener;
 
 
-    public void setListener(ModelListener listener) {
-        this.listener = listener;
+    public void setListener(View listener) {
+        this.listener = (ModelListener) listener;
     }
 
     public void setTime(long seconds) {
@@ -73,20 +73,20 @@ public class Model {
         countMineNeighbors();
     }
 
-    private void addMines(){
+    private void addMines() {
         int minesCount = 0;
         boolean notAllMines = true;
         int randomWidth;
         int randomHeighth;
         Random random = new Random();
-        while (notAllMines){
+        while (notAllMines) {
             randomWidth = random.nextInt(width);
             randomHeighth = random.nextInt(height);
-            if (!gameField[randomWidth][randomHeighth].mine){
+            if (!gameField[randomWidth][randomHeighth].mine) {
                 gameField[randomWidth][randomHeighth].mine = true;
                 minesCount++;
             }
-            if (minesCount == countMinesOnField){
+            if (minesCount == countMinesOnField) {
                 notAllMines = false;
             }
         }
@@ -194,7 +194,25 @@ public class Model {
         isGameStopped = true;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getCountMinesOnField() {
+        return countMinesOnField;
+    }
 
 
+    public String getSeconds() {
+        return seconds;
+    }
+
+    public Difficult getDifficult() {
+        return difficult;
+    }
 
 }
